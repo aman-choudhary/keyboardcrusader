@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>keyboard crusader</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel = "icon" href =  
+"https://i.ibb.co/7gWDHRC/t.png" 
+        type = "image/x-icon"> 
+        </head>
+<body style="">
+
+	<header>
+		<div class="container">
+		<div id="brandname" >
+		</div>
+		
+	</div>
+	</header>
+
+	<div class="ml-container">
+
+		<form style="background-color:white;border-radius: 10px;margin-top:50px;margin-left:360px;margin-right:360px;border-style: outset; border-width: 2px;" action="{{ url_for('predict')}}" method="POST">
+		<h2 style="text-align:center; font-family:verdana;">Detecting Offensive Language in Tweets using TFIDFVectorizer</h2>
+		<p style="text-align:center; font-family:verdana;">Languages Supported: English & Hinglish</p>
+		
+		<p style="text-align:center; font-family:verdana;">Enter Your Tweet Here</p>
+		<!-- <input type="text" name="comment"/> -->
+		
+		<textarea name="message" rows="6" cols="50" style="border: 2px solid  ;
+  border-radius: 4px;display:block;margin-left: auto;
+    margin-right: auto;"></textarea>
+		<br/>
+
+		<input style="display:block;margin-left: auto;
+    margin-right:auto;" type="submit" class="btn-info" value="    Predict     ">
+    <h2></h2>
+	<img style="margin-left:17px;" src="https://i.ibb.co/wRmBDjr/cm.png" alt="cm" border="0">
+		</form>
+	
+	</div>
+ 
+	
+<footer>
+<br>
+<p style="text-align:center; font-family:verdana;font-size:13px"><a style="padding:10px;text-align:center; font-family:verdana;"><a>    Created By: </a><a href="https://www.linkedin.com/in/amanchoudharyy/">Aman Choudhary</a><a> & <a><a href="https://www.linkedin.com/in/rajat-wason-37933115a/">Rajat Wason</a></a></p>
+		
+
+  
+</footer>
+</body>
+</html>
