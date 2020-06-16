@@ -1,29 +1,47 @@
-<!DOCTYPE html>
+
+	<!DOCTYPE html>
 <html>
 <head>
 	<title>keyboard crusader</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
 	<link rel = "icon" href =  
 "https://i.ibb.co/7gWDHRC/t.png" 
         type = "image/x-icon"> 
-        </head>
-<body style="">
+        <style>
+        * {
+  box-sizing: border-box;
+}
 
+input[type=text], select, textarea {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: center;
+  display:block;
+  margin-left: auto;
+  margin-right:auto
+}
+
+}
+</style>
+        </head>
+<body style="background-color:#F5F5F5;">
 	<header>
-		<div class="container">
-		<div id="brandname" >
-		</div>
-		
-	</div>
 	</header>
 
 	<div class="ml-container">
 
-		<form style="background-color:white;border-radius: 10px;margin-top:50px;margin-left:360px;margin-right:360px;border-style: outset; border-width: 2px;" action="{{ url_for('predict')}}" method="POST">
+		<form style="background-color:white;border-radius: 10px;margin-top:30px;margin-left:360px;margin-right:360px;border-style: outset; border-width: 2px;" action="{{ url_for('predict')}}" method="POST">
 		<h2 style="text-align:center; font-family:verdana;">Detecting Offensive Language in Tweets using TFIDFVectorizer</h2>
 		<p style="text-align:center; font-family:verdana;">Languages Supported: English & Hinglish</p>
-		
 		<p style="text-align:center; font-family:verdana;">Enter Your Tweet Here</p>
 		<!-- <input type="text" name="comment"/> -->
 		
@@ -32,20 +50,28 @@
     margin-right: auto;"></textarea>
 		<br/>
 
-		<input style="display:block;margin-left: auto;
-    margin-right:auto;" type="submit" class="btn btn-info" value="    Predict     ">
-    <h2></h2>
-	<img style="margin-left:17px;max-width:100%;height:auto;" src="https://i.ibb.co/wRmBDjr/cm.png" alt="cm" border="0">
-		</form>
-	
+	<input style="background-color: #4CAF50;
+  border: none;
+  color: white;" type="submit" class="btn-info" value="    Predict     ">
+	<br>
+    {% if prediction == 1%}
+	<p style="text-align:center; font-family:verdana;">The tweet was identified as a  <b>racist/hateful/misogynistic</b> remark.</p>
+	{% elif prediction == 0%}
+	<p style="text-align:center; font-family:verdana;">The tweet was identified as a  <b>Neutral</b></p>
+	{% endif %}
+	<img style="width: 100%;height: auto;" src="https://i.ibb.co/wRmBDjr/cm.png" alt="Confusion Matrix" border="0">
+	</form>
 	</div>
- 
-	
 <footer>
 <br>
-<p style="text-align:center; font-family:verdana;font-size:13px"><a style="padding:10px;text-align:center; font-family:verdana;"><a>    Created By: </a><a href="https://www.linkedin.com/in/amanchoudharyy/">Aman Choudhary</a><a> & <a><a href="https://www.linkedin.com/in/rajat-wason-37933115a/">Rajat Wason</a></a></p>
-		
+<b>
+    <p style="text-align:center; font-family:verdana;font-size:13px"><a style="padding:10px;text-align:center; font-family:verdana;"><a> </a><a href="https://github.com/aman-choudhary/keyboardcrusader"> Github Repository Link</a></p>
+</b>
 
+<p style="text-align:center; font-family:verdana;font-size:13px"><b><a style="padding:10px;text-align:center; font-family:verdana;"><a>    CREATED BY: </a><a href="https://www.linkedin.com/in/amanchoudharyy/">AMAN CHOUDHARY</a><a> & <a><a href="https://www.linkedin.com/in/rajat-wason-37933115a/">RAJAT WASON</a></a></p>
+    </b><b>
+<p style="text-align:center; font-family:verdana;font-size:13px"><a style="padding:10px;text-align:center; font-family:verdana;"><a> </a><a href="https://github.com/pmathur5k10/Hinglish-Offensive-Text-Classification">Hinglish Dataset Author</a>: Mathur, Puneet and Sawhney, Ramit and Ayyar, Meghna and Shah, Rajiv  </p>
+</b>
   
 </footer>
 </body>
